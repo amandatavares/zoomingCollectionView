@@ -12,6 +12,10 @@
 		BE3703AC2108A65C00D7799B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3703AA2108A65C00D7799B /* Main.storyboard */; };
 		BE3703AE2108A65D00D7799B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE3703AD2108A65D00D7799B /* Assets.xcassets */; };
 		BE3703B12108A65D00D7799B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3703AF2108A65D00D7799B /* LaunchScreen.storyboard */; };
+		BE3703B92108AE3D00D7799B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3703B82108AE3D00D7799B /* CollectionViewCell.swift */; };
+		BE3703BB2108AFE600D7799B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3703BA2108AFE600D7799B /* File.swift */; };
+		BE3703BD2108B5BD00D7799B /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3703BC2108B5BD00D7799B /* PlaceViewController.swift */; };
+		BE3703BF2108BF5A00D7799B /* zoomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3703BE2108BF5A00D7799B /* zoomTransitioningDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		BE3703AD2108A65D00D7799B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE3703B02108A65D00D7799B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE3703B22108A65D00D7799B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE3703B82108AE3D00D7799B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		BE3703BA2108AFE600D7799B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		BE3703BC2108B5BD00D7799B /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		BE3703BE2108BF5A00D7799B /* zoomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zoomTransitioningDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				BE3703AD2108A65D00D7799B /* Assets.xcassets */,
 				BE3703AF2108A65D00D7799B /* LaunchScreen.storyboard */,
 				BE3703B22108A65D00D7799B /* Info.plist */,
+				BE3703BA2108AFE600D7799B /* File.swift */,
+				BE3703B82108AE3D00D7799B /* CollectionViewCell.swift */,
+				BE3703BC2108B5BD00D7799B /* PlaceViewController.swift */,
+				BE3703BE2108BF5A00D7799B /* zoomTransitioningDelegate.swift */,
 			);
 			path = ZoomingoCollectionView;
 			sourceTree = "<group>";
@@ -136,7 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3703A92108A65C00D7799B /* ViewController.swift in Sources */,
+				BE3703BB2108AFE600D7799B /* File.swift in Sources */,
 				BE3703A72108A65C00D7799B /* AppDelegate.swift in Sources */,
+				BE3703BD2108B5BD00D7799B /* PlaceViewController.swift in Sources */,
+				BE3703B92108AE3D00D7799B /* CollectionViewCell.swift in Sources */,
+				BE3703BF2108BF5A00D7799B /* zoomTransitioningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
