@@ -21,7 +21,6 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        descrip.numberOfLines = 2
+        self.descrip.numberOfLines = 2
     }
 }

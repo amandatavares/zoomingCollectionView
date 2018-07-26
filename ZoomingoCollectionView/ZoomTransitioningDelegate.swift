@@ -67,6 +67,7 @@ extension ZoomTransitioningDelegate : UIViewControllerAnimatedTransitioning
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning)
     {
+        // definindo a duracao da transicao, a view inicial e a view final
         let duration = transitionDuration(using: transitionContext)
         let fromViewController = transitionContext.viewController(forKey: .from)!
         let toViewController = transitionContext.viewController(forKey: .to)!
@@ -108,10 +109,11 @@ extension ZoomTransitioningDelegate : UIViewControllerAnimatedTransitioning
         containerView.addSubview(foregroundViewController.view)
         containerView.addSubview(imageViewSnapshot)
         
-        // A transicao quando 
+        // A transicao quando vai abrir
         var preTransitionState = TransitionState.initial
         var postTransitionState = TransitionState.final
         
+        // A transicao quando vai fechar
         if operation == .pop {
             preTransitionState = .final
             postTransitionState = .initial
