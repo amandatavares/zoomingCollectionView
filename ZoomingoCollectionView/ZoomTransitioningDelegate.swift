@@ -8,6 +8,14 @@
 
 import UIKit
 
+/* IMPORTANTE:
+   Não esqueça: na storyboard, selecione o Navigation Controller e adicione um Object.
+   Depois, defina a classe deste como ZoomTransitioningDelegate
+ */
+
+// Protocolo para ser usado por qualquer ViewController, implementando o delegate ZoomTransitioningDelegate
+// Os controllers ViewController e PlaceViewController usarão esse delegate
+
 @objc
 protocol ZoomingViewController
 {
@@ -15,11 +23,13 @@ protocol ZoomingViewController
     func zoomingBackgroundView(for transition: ZoomTransitioningDelegate) -> UIView?
 }
 
+// Esse enum será útil para controlarmos o estado das transições
 enum TransitionState {
     case initial
     case final
 }
 
+// Essa é a classe que será adicionada no Object da NavigationController
 class ZoomTransitioningDelegate: NSObject
 {
     var transitionDuration = 0.5
@@ -27,8 +37,10 @@ class ZoomTransitioningDelegate: NSObject
     private let zoomScale = CGFloat(15)
     private let backgroundScale = CGFloat(0.7)
     
+    // Esse alias é pra economizar linha de codigo
     typealias ZoomingViews = (otherView: UIView, imageView: UIView)
     
+    //
     func configureViews(for state: TransitionState, containerView: UIView, backgroundViewController: UIViewController, viewsInBackground: ZoomingViews, viewsInForeground: ZoomingViews, snapshotViews: ZoomingViews)
     {
         switch state {
@@ -77,20 +89,26 @@ extension ZoomTransitioningDelegate : UIViewControllerAnimatedTransitioning
         let backgroundImageView = maybeBackgroundImageView!
         let foregroundImageView = maybeForegroundImageView!
         
+        // Nao é um print, é a copia da miniatura da imagem. Entao ele dá o zoom na copia, e a transicao é feita.
         let imageViewSnapshot = UIImageView(image: backgroundImageView.image)
         imageViewSnapshot.contentMode = .scaleAspectFill
         imageViewSnapshot.layer.masksToBounds = true
         
+        // Enquanto as snapshots estao sendo mostradas, as image views ficam escondidas
         backgroundImageView.isHidden = true
         foregroundImageView.isHidden = true
+        
+        // Define cores para os fundos ficarem com a transicao bem show
         let foregroundViewBackgroundColor = foregroundViewController.view.backgroundColor
         foregroundViewController.view.backgroundColor = UIColor.clear
         containerView.backgroundColor = UIColor.white
         
+        // Sao adicionadas na tela as tres views; a de cima, o snapshot e a de baixo
         containerView.addSubview(backgroundViewController.view)
         containerView.addSubview(foregroundViewController.view)
         containerView.addSubview(imageViewSnapshot)
         
+        // A transicao quando 
         var preTransitionState = TransitionState.initial
         var postTransitionState = TransitionState.final
         

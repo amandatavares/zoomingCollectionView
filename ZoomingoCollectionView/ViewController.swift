@@ -14,14 +14,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var places: [Place] = []
     var selectedIndexPath: IndexPath?
     var selectedPlace: Place?
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-
+        
         let place1 = Place(name: "Dragão do Mar", descrip: "Centro de arte e cultura", image: (UIImage(named: "dragaodomar"))!)
+        let place2 = Place(name: "Dragão do Mar", descrip: "Centro de arte e cultura", image: (UIImage(named: "dragaodomar"))!)
+        let place3 = Place(name: "Dragão do Mar", descrip: "Centro de arte e cultura", image: (UIImage(named: "dragaodomar"))!)
+        let place4 = Place(name: "Dragão do Mar", descrip: "Centro de arte e cultura", image: (UIImage(named: "dragaodomar"))!)
         places.append(place1)
+        places.append(place2)
+        places.append(place3)
+        places.append(place4)
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
