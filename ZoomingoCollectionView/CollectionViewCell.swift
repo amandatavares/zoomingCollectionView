@@ -14,4 +14,14 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var descrip: UILabel!
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        descrip.sizeToFit()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        descrip.numberOfLines = 2
+    }
 }
